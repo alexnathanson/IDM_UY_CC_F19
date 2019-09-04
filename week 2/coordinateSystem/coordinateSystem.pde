@@ -40,6 +40,7 @@ void draw(){
     text(str(int(winDimX*(mouseX/float(width)))) + " " + str(int(winDimY*(mouseY/float(height)))),mouseX, mouseY);
     
     //"real" position
-    //text(str(mouseX) + " " + str(mouseY),mouseX, mouseY);
+    textAlign(RIGHT,TOP);
+    text(str(mouseX) + " " + str(mouseY),mouseX, mouseY);
   }
 }

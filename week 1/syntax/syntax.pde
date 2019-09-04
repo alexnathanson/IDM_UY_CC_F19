@@ -1,4 +1,5 @@
 //this is a comment
+//my first processing program!
 
 /*
 this is
@@ -22,17 +23,8 @@ void setup(){
 void draw(){
   
   //this is a function call with arguments in the ()
-  fill(45);
-  stroke(255);
-  strokeWeight(10);
-  ellipse(500, 400, 80, 80);
-  ellipse(800, 400, 80, 80);
+  fill(100);
+  ellipse(400, 400, 80, 80);
   line(500, 500, 800, 500);
   
-  /*
-  noFill();
-  ellipse(500, 500, 800, 700);
-*/
-  //ellipse(mouseX, mouseY, 80, 80);
-  println(frameRate);
 }
