@@ -1,11 +1,16 @@
 
-/*Processing is a statically and strongly typed language
+/*Processing is a static and strongly typed language
 
-Statically typed languages:
-- every variable is bound to a data type when it is compiled.
+Strong vs Weak:
+In a strongly typed language variable types need to be specified and explicit conversion is required (casting).
+In a weakly typed language variables can be implicitly coerced to unrelated types.
 
- in a weakly typed language variables can be implicitly coerced to unrelated types - in a strongly typed language explicit conversion is required.)
+Static vs Dynamic:
+In a static typed language every variable is bound to a data type when it is compiled. This means that the compiler will check for errors and any issues will throw an error at this stage.
+In a dynamic typed language this occurs at run time, so if there is an error in the code, but that line of code isn't executed for some reason you wont necessarily get an error.
 */
+
+//when you declare variables up here, it is a global variable
 int myInteger = 150; //for integers (without a decimal)
 int bckgrnd = myInteger;
 float myFloat = 3.14; //for decimal numbers
