@@ -19,12 +19,14 @@ void setup(){
   //background(0);
 }
 
-//the draw function is called directly after the setup function
+/*the draw function is called directly after the setup function
+this loops continuously for the entire duration of your program*/
 void draw(){
   
   //this is a function call with arguments in the ()
   //color 0-255 (1 byte = 8 bits, 2^8=256)
   fill(100);
+  stroke(255);
   ellipse(400, 400, 80, 80);
   line(500, 500, 800, 500);
   
