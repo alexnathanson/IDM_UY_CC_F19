@@ -23,6 +23,7 @@ void setup(){
 void draw(){
   
   //this is a function call with arguments in the ()
+  //color 0-255 (1 byte = 8 bits, 2^8=256)
   fill(100);
   ellipse(400, 400, 80, 80);
   line(500, 500, 800, 500);
