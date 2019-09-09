@@ -7,8 +7,14 @@ void setup(){
 }
 
 void draw(){
+  //background(255);
+
   counter++;
   //println(counter % 10);
   elapsedTime = millis();
-  println("Today's date: " + day());
+  
+  translate(500,500);
+  fill(elapsedTime % 255,elapsedTime % 250,elapsedTime % 245);
+  ellipse(sin(elapsedTime % 360)*100, cos(elapsedTime % 360)*100, 10,10);
+  println(counter + " Today's date: " + day() + "/" + month() + "/" + year() + ":" + hour() + ":" + minute() +  ":" +second());
 }
