@@ -6,17 +6,17 @@ void setup(){
 void draw(){
   background(255);
   fill(0,255,0);
-  /*
+  
   //rectMode(CORNER);
   rectMode(CORNERS);
   //rectMode(CENTER);
   //rectMode(RADIUS);
   //strokeWeight(10); //thickness of the outline
   //noStroke();
-  //stroke(255); //color of the outline
+  stroke(255); //color of the outline
   strokeJoin(ROUND);//BEVEL, MITER, ROUND
-  rect(mouseX, mouseY, 200, 200);
-  */
+  rect(mouseX, mouseY, 200, 600);
+  
   
   /*
   stroke(0);
@@ -26,7 +26,7 @@ void draw(){
   
   //quad(100,100, 500, 200, 500, 500, 50, 500);
   
-  
+  /*
   strokeWeight(3);
 
   beginShape(TRIANGLE_FAN); //default is a polygon
@@ -37,6 +37,7 @@ void draw(){
   vertex(600, 600);
   vertex(200, 600);
   endShape(CLOSE);
+  */
   /*
   beginShape(TRIANGLE_FAN);
   vertex(57.5, 50);

@@ -1,3 +1,5 @@
+int absoluteV = 0;
+
 void setup(){
   size(800,800);
  // println(typeOf(mousePressed));
@@ -5,8 +7,10 @@ void setup(){
 
 void draw(){
   stroke(255, 0,0);
-  strokeWeight(abs(mouseX-pmouseX));
-  line(mouseX, mouseY, pmouseX, pmouseY);
+  absoluteV = abs(mouseX-pmouseX);
+  strokeWeight(absoluteV);
+  line(mouseX, mouseY,pmouseX,pmouseY);
+  //rect(mouseX,mouseY,50,50);
 }
 
 void mousePressed(){

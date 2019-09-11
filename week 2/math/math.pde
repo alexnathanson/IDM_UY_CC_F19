@@ -1,4 +1,4 @@
-int x=0;
+float x=0.0;
 int y=height;
 
 int mod;
@@ -9,12 +9,12 @@ void setup(){
 
 void draw(){
   background(150);
-  x+=1; //add and asign
+  x+=0.1; //add and asign
   y--; //incriment
   line(0,0,x,height);
   
-  mod = x % 5;
+  mod = int(x) % 5;
   textSize(64+mod);
   textMode(CENTER);
-  text(str(mod), width/2, height/2);
+  text(str(mod), (width/2), height/2);
 }

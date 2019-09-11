@@ -10,7 +10,7 @@ void setup(){
   size(800,800);
   
   quadDim = int(float(width)/numShapes)-spacing-(spacing/10);
-  println(quadDim);
+  //println(quadDim);
   
   float amt = int(float(width)/float(quadDim + (spacing)));
 
