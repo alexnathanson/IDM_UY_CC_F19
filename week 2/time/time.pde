@@ -13,14 +13,15 @@ void setup(){
 }
 
 void draw(){
-  background(255);
+ //background(255);
 
   counter++;
   //println(counter % 10);
   elapsedTime = millis(); //time elapsed since start of the program
-  
+  rect(frameCount % width, height/2,50,50);
+ // println(frameRate);
   translate(500,500);
   fill(elapsedTime % 255,elapsedTime % 250,elapsedTime % 245);
-  ellipse(sin(elapsedTime % (float(1000)/30))*100, cos(elapsedTime % 1000)*100, 10,10);
-  //println(counter + " Today's date: " + day() + "/" + month() + "/" + year() + ":" + hour() + ":" + minute() +  ":" +second());
+  ellipse(sin(elapsedTime % 1000)*100, cos(elapsedTime % 1000)*100, 10,10);
+  println(counter + " Today's date: " + day() + "/" + month() + "/" + year() + ":" + hour() + ":" + minute() +  ":" +second());
 }
