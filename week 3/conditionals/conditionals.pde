@@ -14,6 +14,8 @@ You can have a conditional with multiple boolean operators using:
 
 boolean hungry = true;
 boolean thirsty = false;
+boolean tired = true;
+
 int startX;
 int startY;
 
@@ -64,6 +66,8 @@ void mousePressed(){
   } else {
     thirsty = false;
   }
+  
+  tired = !tired;
   
   strokeW = 1;
 }

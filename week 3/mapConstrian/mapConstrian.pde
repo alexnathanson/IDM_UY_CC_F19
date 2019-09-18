@@ -3,6 +3,9 @@ int newY;
 int offsetX;
 int offsetY;
 
+color iris = color(random(50,255),random(50,255),random(50,255));
+int irisSize = int(random(30, 60));
+
 void setup(){
   size(800,800);
   background(200);
@@ -22,8 +25,7 @@ void draw(){
   newY = int(map(mouseY, 0, width, -60, 60));
   
   //iris
-  fill(random(255),random(255),random(255));
-  int irisSize = int(random(30, 60));
+  fill(iris);
   ellipse(offsetX-(width/6) + newX, offsetY + newY, irisSize,irisSize);
   ellipse(offsetX+(width/6) + newX, offsetY + newY, irisSize,irisSize);
   
@@ -31,5 +33,7 @@ void draw(){
   fill(0);
   ellipse(offsetX-(width/6) + newX, offsetY + newY, 20, 20);
   ellipse(offsetX+(width/6) + newX, offsetY + newY, 20, 20);
-
+  
+  println("Constrain: " + constrain(mouseX,100,200));
+  println("Map: " + map(mouseX, 0, width, 100, 200));
 }

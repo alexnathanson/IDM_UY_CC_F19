@@ -6,7 +6,7 @@ void setup(){
 }
 
 void draw(){
-  println("Key: " + key); //holds the last key pressed
+  println("Key: " + int(key)); //holds the last key pressed
   println(millis());
   println("");
   
@@ -15,6 +15,7 @@ void draw(){
     if (keyCode == UP){ //keyCode is used for keys without ascii values
       println("UP!!!!");
     }
+    println("keyCode: " + keyCode);
   }
   
   if(keyPressed){
