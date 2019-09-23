@@ -29,6 +29,17 @@ void setup(){
 void draw(){
   background(200);
   
+  //stroke(255,0,0);
+  for(int x = 0; x < width*.9; x++){
+    for (int y = 0; y < height*.9; y++){
+      //println(x + ", " + y);
+       color c = color(map(x,0,width, 0, 255),map(y,0, height,0, 255),map((x+y)*.5,0, height,0, 255));
+       set(x+int(width*.05),y+int(height*.05),c);
+    }
+  }
+    
+  
+  
   if(mouseX>width/2){
     rColor= 255;
     eColor= 0;

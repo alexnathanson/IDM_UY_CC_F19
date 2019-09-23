@@ -11,7 +11,6 @@ void setup(){
   background(200);
   
   //a local variable
-  int a = 0;
 
   stroke(0,0,0);
   strokeWeight(1);
@@ -19,19 +18,25 @@ void setup(){
   //checks condition at start of loop
   //like conditionals, it uses a boolean test
   //avoid infinite loops!
-  while(a < 10){
-    line(0,0,random(width),random(height));
-    a++;
-  }
+  
 }
 
 
 void draw(){
-  //background(200);  
-
-  
+  background(200);  
+  int a = 0;
+/*
+  while(a < 10){
+    line(0,0,random(width),random(height));
+  }
+  */
+  /*
+  for(int fa=0;fa<10;fa++){
+    line(0,0,random(width),random(height));
+  }*/
   
   /*
+  strokeWeight(10);
   //a while loop with lerp()
   int x1 = 15;
   int y1 = 10;
@@ -46,9 +51,9 @@ void draw(){
     point(x, y);
    
     a++;
-  }*/
+  }
+  */
   
-  /*
   stroke(0);
   
   //a for loop
@@ -56,7 +61,7 @@ void draw(){
     //println(lX); 
     line(lX * (width/10),0,random(width/10)+(lX*(width/10))-(width/20),random(height*.5)+(height*.5));
   }
-  */
+  
   //println(lX);//this will throw an error
 
 

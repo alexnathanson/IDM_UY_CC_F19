@@ -12,6 +12,8 @@ void draw(){
   //println(anInt);//this will throw an error
   fill(0,0,0,1);
   rect(0,0,width,height);
+  //background(0);
+ //intReturned();
   
   drawFace();
 }
@@ -21,6 +23,9 @@ void nothingReturned(){
   rect(100,100,50,60);
 }
 
+int intReturned(){
+  return 100;
+}
 //returns an int
 // specify the data type of the arguments
 void drawFace(){
