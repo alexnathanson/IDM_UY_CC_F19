@@ -1,11 +1,9 @@
 int size = 20;
-int[] posX = new int[size];
-int[] posY = new int[size];
+int[][] pos = new int[size][size];
 float scaleShape = 15.0;
 
 void setup(){
   size(800,800);
-  
 }
 
 
@@ -15,8 +13,7 @@ void draw(){
   
   //mouse
   //if(mouseX!=pmouseX && mouseY != pmouseY){
-    posX = newMouse(posX, mouseX);
-    posY = newMouse(posY, mouseY);
+    pos = newMouse(pos, mouseX, mouseY);
  //}
  
   
@@ -27,18 +24,20 @@ void draw(){
     posY = newMouse(posY, constrain(posY[posY.length-1]+(100-int(random(200))),0,width));
   }
   */
-  for(int drawIt = 0; drawIt < posX.length; drawIt++){
-    fill(map(drawIt,0,posX.length-1,50, 255));
-    ellipse(posX[drawIt],posY[drawIt], (posX.length-drawIt)*scaleShape,(posX.length - drawIt)*scaleShape);
+  for(int drawIt = 0; drawIt < pos.length; drawIt++){
+    fill(map(drawIt,0,pos.length-1,50, 255));
+    ellipse(pos[drawIt][0],pos[drawIt][1], (pos.length-drawIt)*scaleShape,(pos.length - drawIt)*scaleShape);
   }
 }
 
-int[] newMouse(int[] tempArray, int newData){
+int[][] newMouse(int[][] tempArray, int newDataX,int newDataY){
   
   for (int nM = 0; nM < tempArray.length-1; nM++){
-    tempArray[nM] = tempArray[nM+1];
+    tempArray[nM][0] = tempArray[nM+1][0];
+    tempArray[nM][1] = tempArray[nM+1][1];
   }
-  tempArray[tempArray.length-1]= newData;
+  tempArray[tempArray.length-1][0]= newDataX;
+  tempArray[tempArray.length-1][1]= newDataY;
   //println(tempArray);
   return tempArray;
 }
