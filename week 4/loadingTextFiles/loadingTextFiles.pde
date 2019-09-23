@@ -1,8 +1,7 @@
 
-PFont f1, f2;//declare PFont variable
+PFont f;//declare PFont variable
 
-String myString = "My String";
-
+//text file is an array sepeated by lines
 String[] textFile;
 
 void setup(){
@@ -12,11 +11,8 @@ void setup(){
   //text files should be plain text (created with a simple text editor with the txt file extension)
   textFile = loadStrings("FirstWordLastWord_MichaelNaimark.txt");
 
-  //loading fonts can be slow - almost always best to do it in setup
-  f1 = createFont("Constantia", 24);
-  f2 = createFont("Arial",64);
-  
-  textFont(f1); //specify the font to use
+  f = createFont("Vladimir Script",32);
+  textFont(f); //specify the font to use
   
   //here we are retrieving the value length from the array text file
   println("there are " + textFile.length + " lines");
@@ -24,21 +20,19 @@ void setup(){
     println(textFile[i]);
   }
   
-  //print a list of all available fonts
-  //printArray((PFont.list()));
+  
 }
 
 void draw(){
   background(200);
   
-  String outputString = myString + " " + frameCount;
-
-  //change font every 100 frames
-  if(int(frameCount/100)%2==0){
-      textFont(f1);
-  }else{
-      textFont(f2);
-  }
+  String outputString = textFile[int(frameCount/30)%textFile.length];
+  
+  
+  //devide it by sentances
+  String[] words = split(outputString," ");
+  printArray(words);
+  
   //here we are calling the function length() from the string class
   //println("The string has " + outputString.length() + " characters and is " +  textWidth(outputString) + " long.");//the amount of characters in the string (including white spaces
   fill(0);

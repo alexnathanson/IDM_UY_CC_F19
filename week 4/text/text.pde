@@ -3,19 +3,24 @@ PFont f1, f2;//declare PFont variable
 
 String myString = "My String";
 
-
 void setup(){
   size(800,800);
   background(200);
+   
+  //print a list of all available fonts
+  printArray((PFont.list()));
   
+  int fontAmt = PFont.list().length;
+  String randFont = PFont.list()[int(random(fontAmt))];
+  println("First font: " + randFont);
   //loading fonts can be slow - almost always best to do it in setup
-  f1 = createFont("Constantia", 24);
-  f2 = createFont("Arial",64);
+  f1 = createFont(randFont, 32);
+  randFont = PFont.list()[int(random(fontAmt))];
+  println("Second front: " + randFont);
+  f2 = createFont(randFont,64);
   
   textFont(f1); //specify the font to use
- 
-  //print a list of all available fonts
-  //printArray((PFont.list()));
+
 }
 
 void draw(){
