@@ -3,17 +3,27 @@ PFont f1, f2;//declare PFont variable
 
 String myString = "My String";
 
+String[] textFile;
 
 void setup(){
   size(800,800);
   background(200);
   
+  //text files should be plain text (created with a simple text editor with the txt file extension)
+  textFile = loadStrings("FirstWordLastWord_MichaelNaimark.txt");
+
   //loading fonts can be slow - almost always best to do it in setup
   f1 = createFont("Constantia", 24);
   f2 = createFont("Arial",64);
   
   textFont(f1); //specify the font to use
- 
+  
+  //here we are retrieving the value length from the array text file
+  println("there are " + textFile.length + " lines");
+  for (int i = 0 ; i < textFile.length; i++) {
+    println(textFile[i]);
+  }
+  
   //print a list of all available fonts
   //printArray((PFont.list()));
 }
