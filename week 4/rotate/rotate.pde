@@ -22,6 +22,7 @@ void draw(){
     translate(width/2,height/2);
     rotateY(theta);
     rotateX(theta);
+    rotateZ(theta);
     fill(255);
     rect(0,0,dim,dim);
   

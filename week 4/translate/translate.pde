@@ -9,7 +9,7 @@ int x = dim/2;
 int y;
 
 void setup(){
-  size(800,800);// must add a 3rd argument (that uses a different openGL rendered) to use z axis: P3D
+  size(800,800,P3D);// must add a 3rd argument (that uses a different openGL rendered) to use z axis: P3D
   background(200);
   
   y = height/2;
@@ -32,9 +32,9 @@ void draw(){
   fill(0);
   rect(0, 0,dim,dim);
   
-  /*
-  translate(10, 10);
+  
+  translate(100, 100);
   fill(255);
-  rect(100, 100,dim,dim);
-  */
+  rect(0, 0,dim,dim);
+  
 }

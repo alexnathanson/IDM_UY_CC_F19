@@ -1,9 +1,13 @@
+//a multi dimensional array could also be thought of as nested arrays
+// a 2D array like the one below is an array of arrays 
+
 int size = 20;
-int[][] pos = new int[size][size];
+int[][] pos = new int[size][2];
 float scaleShape = 15.0;
 
 void setup(){
   size(800,800);
+  printArray(pos[0]);//this doesn't work for nested arrays
 }
 
 

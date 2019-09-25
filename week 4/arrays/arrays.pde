@@ -42,7 +42,7 @@ void draw(){
   
   drawArray(myIntArray);
   
-  //shiftArray(myIntArray);
+  shiftArray(myIntArray);
 }
 
 

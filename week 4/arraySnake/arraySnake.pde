@@ -5,7 +5,6 @@ float scaleShape = 15.0;
 
 void setup(){
   size(800,800);
-  
 }
 
 
@@ -17,7 +16,7 @@ void draw(){
   //if(mouseX!=pmouseX && mouseY != pmouseY){
     posX = newMouse(posX, mouseX);
     posY = newMouse(posY, mouseY);
- //}
+// }
  
   
   /*

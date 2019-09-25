@@ -41,7 +41,7 @@ void draw(){
 void mouseReleased(){
   
   if (myGradient1.colorTemp == "hot"){
-    myGradient1.colorTemp = "cool";
+    myGradient1.colorTemp = "cool";//better to use getter and setter functions
   } else if (myGradient1.colorTemp == "cool"){
     myGradient1.colorTemp = "hot";
   }

@@ -19,8 +19,8 @@ void draw(){
 
   s+=.01;
   
-  //translate(width/2,height/2);
+  translate(width/2,height/2);
   scale(s);
   fill(255);
-  rect(width/2,height/2,dim,dim);
+  rect(0,0,dim,dim);
 }

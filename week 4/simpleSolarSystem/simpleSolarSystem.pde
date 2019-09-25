@@ -1,13 +1,14 @@
 float theta = 0;
+int bckgrnd = 0;
 
 void setup(){
   fullScreen();
-  background(200);
+  background(bckgrnd);
 
 }
 
 void draw(){
-  background(200);
+  background(bckcgrnd);
   
   theta+=0.005;
   

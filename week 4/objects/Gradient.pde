@@ -71,3 +71,7 @@ class Gradients{
     println(colorTemp);
   }
 }
+
+//getters
+
+//setters
