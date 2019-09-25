@@ -8,7 +8,7 @@ void setup(){
 }
 
 void draw(){
-  background(bckcgrnd);
+  background(bckgrnd);
   
   theta+=0.005;
   
