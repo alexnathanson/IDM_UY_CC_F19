@@ -6,9 +6,19 @@ Planet Earth = new Planet(60,50);
 
 Moon theMoon = new Moon();
 
+Planet[] listPlanets = new Planet[5];
+
 void setup(){
   fullScreen();
   background(bckgrnd);
+  
+  for(int a =0;a <listPlanets.length;a++){
+    listPlanets[a] = new Planet(int(random(20,100)),int(random(20,100)));
+    listPlanets[a].planetColor = color(int(random(255)),int(random(255)),int(random(255)));
+    listPlanets[a].translateX = int(random(20,400));
+    listPlanets[a].translateY = int(random(20,400));
+
+  }
 
 }
 
@@ -24,48 +34,38 @@ void draw(){
     
    
     //earth
-    push();
-      translate(-350,350);
+    for(int p = 0;p < listPlanets.length;p++){
+      push();
+      translate(listPlanets[p].translateX, listPlanets[p].translateY);
       rotate(theta*4);
-      Earth.display();
-      translate(40,40);
-      theMoon.display();
+      listPlanets[p].display();
+      //translate(40,40);
+      //theMoon.display();
     pop();
-   
-    /*
-    //some other planet
-    push();
-      rotate(theta*2);//if the rotation is placed ahead of the translate, it has the effect of adding to the previous rotate
-      translate(250,250);
-      ellipse(0,0,30,30);
-      push();
-        rotate(theta*4);
-        translate(30,30);
-        ellipse(0,0,12,12);
-      pop();
-      push();
-        rotate(theta*10);
-        translate(-20,20);
-        ellipse(0,0,10,10);
-      pop();
-    pop();*/
+    }
     
+  
   pop();
     
   
 }
 
 class Planet{
-  int sizeX, sizeY, distX, distY;
+  int sizeX, sizeY, distX, distY,translateX,translateY;
+  color planetColor;
   
   Planet(int tempSizeX, int tempSizeY){
     sizeX = tempSizeX;
     sizeY = tempSizeY;
     distX = 0;
     distY = 0;
+    translateX = 0;
+    translateY = 0;
+    planetColor = color(255,0,0);
   }
   
   void display(){
+    fill(planetColor);
     ellipse(distX,distY, sizeX,sizeY);
   }
   
@@ -80,7 +80,7 @@ class Planet{
 
 class Moon extends Planet{
   Moon(){
-    super(50,50);
+    super(15,15);
   }
   
   void display(){
