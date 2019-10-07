@@ -3,7 +3,7 @@ let theHouse;
 let allHouses = [];
 
 function setup(){
-	createCanvas(800,800);
+	createCanvas(windowWidth,800);
 
 	theHouse = new House(int(random(width)),
 		int(random(height)),
@@ -13,7 +13,7 @@ function setup(){
 		color(255,0,0),
 		random(10,20));
 
-	for (let h = 0;h < 10;h++){
+	for (let h = 0;h < 20;h++){
 		allHouses.push(new House(int(random(width)),
 			int(random(height)),
 			int(random(5,50)),
@@ -25,33 +25,64 @@ function setup(){
 }
 
 function draw(){
+
+	background(255);
 	for(let h in allHouses){
 		allHouses[h].displayIt();
+		if(allHouses[h].posX<width){
+			allHouses[h].posX+=1;
+			//allHouse[h].posY+=1;
+		} else {
+			allHouses[h].posX = 0 - allHouses[h].hWidth;
+			allHouses[h].posY = int(random(windowHeight));
+			allHouses[h].color= color(int(random(100,255)),int(random(100,255)),int(random(100,255)));
+
+
+		}
+		
+
 	}
 
-	theHouse.displayIt();
+	//theHouse.displayIt();
 }
 
-class House {
-  constructor(posX, posY, tempHHeight, tempHWidth,tempHColor,tempHStroke,tempRoofHeight) {
+class Building {
+	constructor(tempPosX, tempPosY){
+		this.posX = tempPosX;
+    	this.posY = tempPosY;
+	}
+}
+
+//inheritance
+class House extends Building{
+  constructor(tempPosX, tempPosY,tempHHeight, tempHWidth,tempHColor,tempHStroke,tempRoofHeight) {
+  	super(tempPosX, tempPosY)
     this.hHeight = tempHHeight;
     this.hWidth = tempHWidth;
-    this.posX = posX;
-    this.posY = posY;
     this.color = tempHColor;
     this.stroke = tempHStroke;
     this.strokeWeight = 3;
     this.roofHeight = tempRoofHeight;
   }
   // Getter
-  get area() {
-    return this.calcArea();
+
+  /*
+  get posX() {
+    return this.posX;
   }
-  // Method
-  calcArea() {
-    return this.hHeight * this.hWidth;
+   get posY() {
+    return this.posY;
   }
 
+  set posX(){
+
+  }
+
+  set postY(){
+
+  }*/
+
+  // Method
   displayIt(){
   	strokeWeight(this.strokeWeight);
   	stroke(this.stroke);

@@ -12,10 +12,10 @@ let myDimensionalArray = [
 
 let myPosArray = [];
 
-let startColor,endColor;
+let startColor, endColor;
 
 function setup(){
-	createCanvas(800, 800);
+	createCanvas(windowWidth/2, windowHeight/2);
 
 //this array has different data types!
 	for (let a =0; a < 10; a++){
@@ -28,14 +28,13 @@ function setup(){
 		}
 	}
 
-	console.log(myArray);
+	console.log(myArray.length);
 	//this is a simplified for loop
 	for (let fI in myArray){
 			//typeof is an operator
 			console.log(typeof myArray[fI]);
 
 			console.log(myArray[fI]);
-
 		}
 
 	//lerp colors

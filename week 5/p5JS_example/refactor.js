@@ -24,7 +24,7 @@ let constrainedMouseX;
 let contrainedMouseY;
 
 function setup(){
- 	createCanvas(800,800);
+ 	createCanvas(800,400);
  	background(200);
 
  	offsetX = 100;
