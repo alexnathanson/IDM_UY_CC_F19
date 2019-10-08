@@ -6,6 +6,7 @@ P5.JS uses the preload() function
 
 
 /***** PRELOAD ********/
+
 let img;
 
 //preload runs once before setup and forces the program to wait until it is finished

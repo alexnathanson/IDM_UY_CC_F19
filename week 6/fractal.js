@@ -12,26 +12,64 @@ function setup(){
 	x = 0;
 	y = 0;
 	dim = windowWidth/5;
-
-	fract = new Fractal(windowWidth/2,windowHeight/2,dim, 50, 0.7);
-	noFill();
-	fract.displayEllipse(fract.posX,fract.posY,fract.rDim);
-	//fract.displayLine(fract.posX,fract.posY,400,.5);
+	translate(windowWidth/2,windowHeight/2);
+	fract = new Fractal(0,0,dim, 5, 0.8);
+	noFill(); 
+	//fract.displayEllipse(fract.posX,fract.posY,fract.rDim);
+	//fract.displayLine(fract.posX,fract.posY,200,.2);
 
 }
 
 function draw(){
-	//spiral();
+	spiral();
+	//circled();
+	//fractFunct(windowWidth/2, windowHeight/2, 600);
 }
 
 function spiral(){
+	theta= 2;
+	radius= 20;
+	x=cos(theta);
+	y=sin(theta) ;
+
+	ellipse(x *(windowWidth/2),y * (windowHeight/2),50,50);
+}
+
+
+
+
+
+function circled(){
+
 	theta+=.05;
 	radius+= .5;
 	x=cos(theta) * radius;
 	y=sin(theta) * radius;
 
-	ellipse(x +(windowWidth/2),y + (windowHeight/2),50,50);
+	rect(x,y,50,50);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function fractFunct(fx,fy,fd){
 	ellipse(fx,fy,fd,fd);
@@ -39,9 +77,10 @@ function fractFunct(fx,fy,fd){
 	fd*= 0.7;
 	if(fd > 200){
 		fractFunct(fx-(fd/2),fy,fd);
-		fractFunct(fx+(fd/2),fy,fd);
+		//fractFunct(fx+(fd/2),fy,fd);
 		fractFunct(fx,fy-(fd/2),fd);
-		fractFunct(fx,fy+(fd/2),fd);	}
+		//fractFunct(fx,fy+(fd/2),fd);
+	}
 }
 
 class Fractal{

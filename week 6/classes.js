@@ -4,7 +4,7 @@ let allBuildings = [];
 
 function setup(){
 	createCanvas(windowWidth,800);
-
+ 
 
 	theHouse = new House(int(random(width)),
 		int(random(height)),
