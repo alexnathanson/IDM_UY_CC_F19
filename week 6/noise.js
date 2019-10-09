@@ -1,6 +1,5 @@
 let scrollingNoiseArray;
-let xoff,yoff;
-let tofftoff = 0;
+let xoff,yoff,toff;
 
 function setup(){
 	createCanvas(windowWidth,800);
@@ -15,7 +14,7 @@ function setup(){
 
 
 function draw() {
-  //background(204);
+  background(204,0,0);
   
 
   //noise1D();
@@ -24,7 +23,11 @@ function draw() {
 
   //noise2D();
 
- 	noise3D();
+ //noise3D();
+
+ //ellipseNoise1D();
+ 
+ flowField();
 
 
 }
@@ -81,16 +84,30 @@ function noise2D(){
 	updatePixels();
 }
 
+function ellipseNoise1D(){
+	//xoff = 0;
+	//yoff = 0;
+	let noiseScale = 0.005;
+	toff+= 0.005;
+
+	let eX = windowWidth*noise(toff);
+	//this needs to be offset so that  x doesn't equal y and
+	//it doesn't move in a 45 degree angle
+	let eY = windowHeight*noise(toff+5);
+	fill(255*noise(toff+10));
+	ellipse(eX,eY,50,50)
+}
+
 function noise3D(){
 	//xoff = 0;
 	//yoff = 0;
 	let noiseScale = 0.005;
+	let tScale = 0.00002;
 
-	toff+= 0.01;
 	for (let x=0; x < 400; x++) {
 		for(let y = 0; y<400;y++){
 			
-			let n = noise(x*noiseScale,y*noiseScale,toff);
+			let n = noise(x*noiseScale,y*noiseScale,tScale*millis());
 			let c = color(255 * n);
     		set(x,y,c);
 		}
@@ -98,6 +115,28 @@ function noise3D(){
 	updatePixels();
 }
 
-function noiseVectors(){
+function flowField(){
 	
+	let inc = 0.1;
+	let vecScale = 20;
+	let rows = floor(width/vecScale);
+	let columns = floor(height/vecScale);
+	toff+=inc;
+	xoff=0; 
+	for (let x=0; x < rows; x++) {
+		yoff=0;
+		for(let y = 0; y< columns;y++){
+			let index = (x+y * width) * 4;
+			let radi = noise(xoff,yoff,toff) * TWO_PI;//multiply TWO_PI by 4 to get a fuller range of directions
+			let v = p5.Vector.fromAngle(radi);
+			yoff+=inc;
+			stroke(0);
+			push();
+			translate(x*vecScale,y*vecScale);
+			rotate(v.heading());
+			line(0,0,vecScale,0);
+			pop();
+		}
+		xoff+=inc;
+	}
 }

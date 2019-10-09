@@ -8,68 +8,23 @@ let radius = 0;
 let theta = 0;
 
 function setup(){
-	createCanvas(windowWidth,windowHeight)
+	createCanvas(800,800);
 	x = 0;
 	y = 0;
-	dim = windowWidth/5;
-	translate(windowWidth/2,windowHeight/2);
-	fract = new Fractal(0,0,dim, 5, 0.8);
+	dim = width/4;
+	
+	fract = new Fractal(0,0,dim, 25, 0.6);
 	noFill(); 
-	//fract.displayEllipse(fract.posX,fract.posY,fract.rDim);
+	translate(width/2,height/2);
+	fract.displayEllipse(fract.posX,fract.posY,fract.rDim);
 	//fract.displayLine(fract.posX,fract.posY,200,.2);
 
 }
 
 function draw(){
-	spiral();
-	//circled();
-	//fractFunct(windowWidth/2, windowHeight/2, 600);
+	translate(width/2,height/2);
+	//fractFunct(0, 0, 600);
 }
-
-function spiral(){
-	theta= 2;
-	radius= 20;
-	x=cos(theta);
-	y=sin(theta) ;
-
-	ellipse(x *(windowWidth/2),y * (windowHeight/2),50,50);
-}
-
-
-
-
-
-function circled(){
-
-	theta+=.05;
-	radius+= .5;
-	x=cos(theta) * radius;
-	y=sin(theta) * radius;
-
-	rect(x,y,50,50);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function fractFunct(fx,fy,fd){
 	ellipse(fx,fy,fd,fd);
