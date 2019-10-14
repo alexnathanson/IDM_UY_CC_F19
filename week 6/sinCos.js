@@ -8,8 +8,8 @@ let theta = 0;
 function setup(){
 	createCanvas(windowWidth,800);
 	
-	sinWave();
-	cosWave();
+	//sinWave();
+	//cosWave();
 
 }
 
@@ -17,7 +17,7 @@ function draw(){
 	push();
 	translate(width/2,height/2);
 	spiral();
-	//circled();
+	//circledTen();
 	pop();
 }
 
@@ -71,4 +71,20 @@ function circled(){
 	y=sin(theta) * radius;
 
 	ellipse(x,y,50,50);
+}
+
+
+function circledTen(){
+
+	//theta+=.05;
+	radius = 200;
+
+	for (let o = 0;o <10;o++){
+		theta = (TWO_PI/10)*o;
+		x=cos(theta) * radius;
+		y=sin(theta) * radius;
+
+	ellipse(x,y,50,50);
+	}
+	
 }

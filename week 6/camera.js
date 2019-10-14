@@ -13,7 +13,7 @@ function setup() {
 function draw() {
   image(capture, 0, 0, width, width * capture.height / capture.width);
   //filter(INVERT);
- //filter(BLUR,map(mouseX,0,width,0,10));
+	filter(BLUR,2);
 
 }
 

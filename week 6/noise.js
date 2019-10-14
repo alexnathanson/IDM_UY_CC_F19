@@ -29,7 +29,6 @@ function draw() {
  
  flowField();
 
-
 }
 
 //noise1D is in red
@@ -41,7 +40,7 @@ function noise1D(){
 	xoff=0;
 
 	for (let x=0; x < windowWidth; x++) {
-		xoff = xoff + 0.005;
+		xoff = xoff + .005;
 		let n = noise(xoff);
 		stroke(255*n,0,0);
 		line(x, height*n,x, height);  	
@@ -101,8 +100,8 @@ function ellipseNoise1D(){
 function noise3D(){
 	//xoff = 0;
 	//yoff = 0;
-	let noiseScale = 0.005;
-	let tScale = 0.00002;
+	let noiseScale = 0.05;
+	let tScale = 0.00005;
 
 	for (let x=0; x < 400; x++) {
 		for(let y = 0; y<400;y++){

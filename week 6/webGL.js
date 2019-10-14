@@ -6,22 +6,28 @@ function setup(){
 	createCanvas(windowWidth, windowHeight, WEBGL);
 }
 
+let zAxis,zScale = 0;
 function draw(){
 	background(255);
 
 	//rotate(angle);
 
-	
+	zAxis+= 10;
+	zScale+= 0.0001;
+	if (zAxis>500){
+		zAxis = -6000;
+		zScale = 0;
+	}
 	push();
-	translate(0,0,map(mouseX,10,width,-1000,1000));
-	//scale(map(mouseX,0,width,0.0,1.0));
-	rotateX(angle);
-	rotateZ(angle);
-
+	translate(0,0,zAxis);
+	scale(zScale);
+	//rotateX(angle);
+	//rotateZ(angle);
+	rotateY(angle);
 	//noStroke();
 	//fill is function here as a "basic" material
-	//fill(255,0,0);
-	noFill();
+	fill(255,0,0);
+	//noFill();
 	
 	//normalMaterial();
 
@@ -45,12 +51,13 @@ function noise1D(){
 	*/
 	let xoff=0;
 
-	for (let x=0; x < windowWidth; x++) {
+	for (let x=0; x < windowWidth*2; x++) {
 		xoff = xoff + 0.005;
 		let n = noise(xoff);
 		push();
 		//reset origin to traditional 0,0 then set height of boxes
 		translate(-width/2,(-height/2)+(height*n),map(mouseX,10,width,-1000,1000));
+
 		//noStroke();
 		//fill(255*n,0,0);
 		stroke(0,255*n,0);

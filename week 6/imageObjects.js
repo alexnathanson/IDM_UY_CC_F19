@@ -1,6 +1,6 @@
 
 
-let img,imgB;
+let img,imgB,imgP;
 
 let plantImgs = [];
 
@@ -11,6 +11,8 @@ function preload(){
 	img = loadImage("images/bee.png");
 	imgB = loadImage("images/bee_reversed.png");
 	
+	//imgP = loadImage("images/plants1.png");
+
 	/*plantImgs[0] = loadImage("images/plants1.png");
 	plantImgs[1] = loadImage("images/plants2.png");
 	plantImgs[2] = loadImage("images/plants3.png");*/
@@ -39,6 +41,7 @@ function setup(){
 function draw(){
 	background(50,150,0);
 
+	//image(imgP,0,0);
 	//image(plantImgs[int(random(plantImgs.length-1))],0,0);
 	//plantObj[0].display();
 	
