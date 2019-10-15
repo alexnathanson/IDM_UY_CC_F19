@@ -44,6 +44,7 @@ class Obstacles{
 				}
 			} else if (this.shape ==1){ //ellipse
 				//the radius of the player + the radius of this obstacle
+				//find the distance between the two center points and check if it is less than the sum of both radii
 				let minDistanceX = (this.dimX + tempPosition[2])/2;
 				let minDistanceY = (this.dimY + tempPosition[3])/2;
 				
