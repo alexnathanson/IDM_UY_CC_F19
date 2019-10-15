@@ -4,7 +4,7 @@ let t = 0;
 let inc = 0.005;
 
 function setup(){
-	createCanvas(windowWidth,500);
+	createCanvas(windowWidth,700);
 	
 	for (let h = 0; h < 15; h++){
 		shapes[h] = new SomeShapes(int(random(2)));

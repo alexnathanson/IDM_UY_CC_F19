@@ -19,15 +19,17 @@ function draw() {
 
   //noise1D();
 
+  noiseMountains2D();
   //scrollingNoise1D();
 
   //noise2D();
+
 
  //noise3D();
 
  //ellipseNoise1D();
  
- flowField();
+ //flowField();
 
 }
 
@@ -42,6 +44,22 @@ function noise1D(){
 	for (let x=0; x < windowWidth; x++) {
 		xoff = xoff + .005;
 		let n = noise(xoff);
+		stroke(255*n,0,0);
+		line(x, height*n,x, height);  	
+	}
+}
+
+let mT = 0;
+function noiseMountains2D(){
+	/*xoff needs to be global, otherwise it wont change every frame
+	because xoff is reset to 0 everytime it produces the same output
+	(but only as long as the program is running i.e. refreshing the page creates a new output)
+	*/
+	xoff=0;
+	mT+= 0.01;
+	for (let x=0; x < windowWidth; x++) {
+		xoff = xoff + .005;
+		let n = noise(xoff,mT);
 		stroke(255*n,0,0);
 		line(x, height*n,x, height);  	
 	}
