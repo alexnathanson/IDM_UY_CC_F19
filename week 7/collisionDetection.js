@@ -10,8 +10,8 @@ function setup(){
 		shapes[h] = new SomeShapes(int(random(2)));
 	}
 
-	/*shapes[0] = new SomeShapes(1);
-	shapes[1] = new SomeShapes(0);
+	/*shapes[0] = new SomeShapes(0);
+	shapes[1] = new SomeShapes(1);
 	*/
 
 }

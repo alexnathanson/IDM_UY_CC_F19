@@ -53,6 +53,7 @@ function mouseInCircle(cX,cY,cD){
 
 //this is for CENTER mode
 function mouseInRect(rX,rY,rDX,rDY){
+	//demo lines
 	line(0,rY-(rDY/2),width,rY-(rDY/2));
 	line(0,rY+(rDY/2),width,rY+(rDY/2));
 	line(rX-(rDY/2),0,rX-(rDY/2),height);

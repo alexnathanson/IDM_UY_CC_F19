@@ -19,13 +19,13 @@ function draw() {
 
   //noise1D();
 
-  noiseMountains2D();
+  //noiseMountains2D();
   //scrollingNoise1D();
 
   //noise2D();
 
 
- //noise3D();
+ noise3D();
 
  //ellipseNoise1D();
  
@@ -45,7 +45,7 @@ function noise1D(){
 		xoff = xoff + .005;
 		let n = noise(xoff);
 		stroke(255*n,0,0);
-		line(x, height*n,x, height);  	
+		line(x, height*n,x, height);
 	}
 }
 
@@ -60,7 +60,7 @@ function noiseMountains2D(){
 	for (let x=0; x < windowWidth; x++) {
 		xoff = xoff + .005;
 		let n = noise(xoff,mT);
-		stroke(255*n,0,0);
+		stroke(255*n,0,255*n);
 		line(x, height*n,x, height);  	
 	}
 }

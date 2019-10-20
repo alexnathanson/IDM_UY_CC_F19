@@ -21,7 +21,7 @@ function setup(){
 	createCanvas(windowWidth,500);
 	
 	racingSounds.loop();
-	racingSounds.setVolume(0.5);
+	racingSounds.setVolume(.1);
 	myGame = new GamePlay();
 	myGame.gShape=floor(random(2));
 

@@ -25,13 +25,13 @@ function draw(){
  //}
  
   
-  /*
+  
   //automate
-  if(frameCount%4==0){
+  /*if(frameCount%4==0){
     posX = newMouse(posX, constrain(posX[posX.length-1]+(100-int(random(200))),0,width));
     posY = newMouse(posY, constrain(posY[posY.length-1]+(100-int(random(200))),0,width));
-  }
-  */
+  }*/
+  
   for(let drawIt = 0; drawIt < pos.length; drawIt++){
     fill(map(drawIt,0,pos.length-1,50, 255));
     ellipse(pos[drawIt][0],pos[drawIt][1], (pos.length-drawIt)*scaleShape,(pos.length - drawIt)*scaleShape);
