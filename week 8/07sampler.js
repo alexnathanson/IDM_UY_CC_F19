@@ -36,7 +36,10 @@ function keyPressed() {
       drawRect(numKey);
       let recordLength = 3;
       samples[numKey] = new p5.SoundFile();
+      //the anonymous function wraps our function, which allows us to pass an argument to our callback
       recorder.record(samples[numKey], recordLength,function(){playRecording(numKey)});//this is an anonymous function
+      //recorder.record(samples[numKey], recordLength,playRecording);//this is an anonymous function
+
     }
   }
 }

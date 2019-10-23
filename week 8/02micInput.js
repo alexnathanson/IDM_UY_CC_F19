@@ -9,6 +9,7 @@ function setup(){
 	createCanvas(windowWidth, windowHeight);
 	bckgrnd = color(255,2)
 	thresh = mouseY;
+	
 	mic = new p5.AudioIn();
 	mic.start();
 	mic.amp(1.0);//set mic input volume to 1.0

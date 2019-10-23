@@ -12,7 +12,7 @@ function preload(){
 
 function setup(){
 	createCanvas(windowWidth,200);
-	background(255);
+	background(200);
 
 	trackVolSlider = createSlider(0.0,2.0,1,0.1);
 	trackRateSlider = createSlider(0.0,3.0,1,0.1);
@@ -39,16 +39,16 @@ function setup(){
 	distortion = new p5.Distortion();
 	
 	// 3 second reverbTime, decayRate of 2%
-	reverbTime = 3;
+	reverbTime = 0;
 	decayRate = 2;
 	reverb.process(track, reverbTime, decayRate);
-	reverb.disconnect();
+	//reverb.disconnect();
 
 	// source, delayTime, feedback, filter frequency
-	delay.process(reverb, .12, 0.7, 2300);
-	/*delay.delayTime(0);
+	//delay.process(reverb, .12, 0.7, 2300);
+	delay.delayTime(0);
 	delay.feedback(0.7);
-	delay.filter(2300);*/
+	delay.filter(2300);
 	delay.disconnect();
 
 	compressor.disconnect();
@@ -58,20 +58,18 @@ function setup(){
 	filter.disconnect();
 
 	//source, distoration amount
-	distortion.process(delay,0.7);
-	//distortion.set(0.0);
-	//distortion.disconnect();
+	//distortion.process(delay,0.7);
+	distortion.set(0.0);
+	distortion.disconnect();
 
-	reverb.chain(distortion);
-
-	updateSliders();
+	reverb.chain(delay,distortion);
 
 }
 
 
 
 function draw(){
-	background(255);
+	background(200);
 
 	push()
 	textStyle(BOLD);

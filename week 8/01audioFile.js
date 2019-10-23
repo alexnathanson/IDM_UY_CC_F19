@@ -10,7 +10,7 @@ let channel = 2;
 let c5  = true;
 
 function preload(){
-	track = loadSound('assets/opera.mp3');
+	track = loadSound('assets/TomWaitsEmotionalWeatherReport.mp3');
 }
 
 function setup(){
@@ -44,7 +44,7 @@ function draw(){
 
 function keyPressed(){
 	if (key== 'j'){
-		jumpAhead(2);//jump ahead by 2 seconds
+		jumpAhead(20);//jump ahead by 2 seconds
 	} else if (key == "p"){
 		if(track.isPlaying()){
 			track.pause();
