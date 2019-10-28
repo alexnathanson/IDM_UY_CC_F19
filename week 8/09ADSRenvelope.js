@@ -5,9 +5,9 @@ let attackLevel = 1.0;
 let releaseLevel = 0;
 
 let attackTime = 0.001;
-let decayTime = 0.2;
+let decayTime = 0.3;
 let susPercent = 0.2;
-let releaseTime = 0.5;
+let releaseTime = 0.4;
 
 function setup(){
 		
@@ -15,15 +15,15 @@ function setup(){
   	env.setADSR(attackTime, decayTime, susPercent, releaseTime);
   	env.setRange(attackLevel, releaseLevel);
 	//this is another way to make a sine wave oscillator
-	osc = new p5.Oscillator();
+	/*osc = new p5.Oscillator();
 	osc.amp(env);
-	osc.freq(220);
+	osc.freq(440);
 	osc.setType('sine');
 	osc.start();
-	//osc.disconnect();
-
+	osc.disconnect();
+*/
 	//in p5.js noise is a type of oscillator that generatese buffers of random values
-	noise = new p5.Noise('pink');//noise can be white,brown,or pink
+	noise = new p5.Noise();//noise can be white,brown,or pink
 	noise.amp(env);
 	noise.start();
 	//noise.disconnect();

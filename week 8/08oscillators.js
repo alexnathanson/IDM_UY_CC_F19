@@ -4,7 +4,7 @@ let sine,triangle,saw,square,osc;
 function setup(){
 		//sine wave is a semetrical repeating form
 		//frequency is measured in hz (cycles per second)
-	sine = new p5.Oscillator(60,'sine');
+	sine = new p5.Oscillator(440,'sine');
 	sine.start();
 	sine.amp(0);
 

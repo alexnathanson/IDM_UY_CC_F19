@@ -11,8 +11,8 @@ let patternB = [1,1,1,4,0,4,0,2];
 let scorePattern;
 
 function preload() {
-  mySoundA = loadSound('assets/clap.wav');
-  mySoundB = loadSound('assets/drum.mp3');
+  mySoundB = loadSound('assets/clap.wav');
+  mySoundA = loadSound('assets/drum.mp3');
 
 }
 
@@ -71,7 +71,8 @@ function makeSoundB(time, playbackRate) {
 
 function mouseClicked() {
   if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
-    myScore.loop(); 
+    //myScore.loop(); 
+    pA.start();
     //pC.start();
   }
 }

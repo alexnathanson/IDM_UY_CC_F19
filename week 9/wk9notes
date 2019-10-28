@@ -1,0 +1,42 @@
+*loading images
+
+*animating images - matrix transformations, etc.
+
+*tint
+
+*cropping
+
+*image arrays
+
+pixels
+* loadpixels & update pixels
+* draw shapes with pixels
+- brightnesss
+- threshold...
+-images and pixels
+- color picker
+- mouse vignette (brightness related to distance to mouse)
+- edges
+- sharpen
+- blur
+
+apply an images' values to another image
+make an image composed of itself
+*make random shapes display an image...
+
+*filter()
+
+chromakey
+luma key
+
+
+VIDEO
+live video
+recorded video
+
+motion detection
+motion tracker
+color tracker
+background removal
+
+saving images
