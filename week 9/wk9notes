@@ -11,11 +11,13 @@
 pixels
 * loadpixels & update pixels
 * draw shapes with pixels
-- brightnesss
+* brightnesss
 - threshold...
 -images and pixels
 - color picker
 - mouse vignette (brightness related to distance to mouse)
+
+pixel neighborhood
 - edges
 - sharpen
 - blur

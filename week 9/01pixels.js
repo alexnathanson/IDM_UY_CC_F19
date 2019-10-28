@@ -6,6 +6,8 @@ function setup(){
 	cY = windowHeight;
 	createCanvas(cX,cY);
 	yLine = 50;
+	
+	pixelDensity(1);
 
 	loadPixels();
 	console.log("Canvas: " + cX + ' * ' + cY + ' = ' + (cX*cY));
@@ -18,7 +20,6 @@ function setup(){
 	}*/
 	
 	//pixel density is needed for some displays, like Apple Retina displays
-	let d = pixelDensity();
 	for (let pX = 0; pX < width; pX++) {
 	  for (let pY = 0; pY < height; pY++) {
 	    // loop over

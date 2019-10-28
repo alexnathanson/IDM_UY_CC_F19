@@ -9,7 +9,9 @@ function preload(){
 
  function setup(){
   createCanvas(windowWidth,windowHeight);
+  pixelDensity(1);
 
+  frameRate(30);
   //this loads the pixels into the pixels attribute
   origImages[0].loadPixels();
 
@@ -26,7 +28,7 @@ function preload(){
     origImages[0].updatePixels();
     procImage.updatePixels();
 
-  image(procImage,0,0);
+  //image(procImage,0,0);
   //mBrightness(.9);
 
  }
@@ -35,7 +37,32 @@ function draw(){
   
   //background(0,100,45);
   
+  //another way to manipulate an image is to draw it to the canvas
+  //and then process all of the pixels on the canvas
+  image(procImage,0,0);
 
+  loadPixels();
+    for (var y = 0; y < height; y++) {
+        for (var x = 0; x < width; x++) {
+          var index = (x + y * width)*4;
+          var r = pixels[index+0];
+          var g = pixels[index+1];
+          var b = pixels[index+2];
+          var a = pixels[index+3];     
+          
+          //this is the luma formula which is a weighted average
+          var luma = r *.299 + g *.587 + b *.0114;
+          
+          pixels[index+0] = luma;
+          pixels[index+1] = luma;
+          pixels[index+2] = luma;
+    }
+  }
+  updatePixels();
+
+  textSize(24);
+  fill(255,0,0);
+  text(frameRate(),20,50);
 }
 
 function keyPressed(){

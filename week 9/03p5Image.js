@@ -11,6 +11,8 @@ function preload(){
  function setup(){
   createCanvas(windowWidth,windowHeight);
   
+  pixelDensity(1);
+
   imgDimX = img1.width;
   imgDimY = img1.height;
   //masks one image with the alpha from a different image
