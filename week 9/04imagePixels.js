@@ -11,8 +11,9 @@ function preload(){
   createCanvas(windowWidth,windowHeight);
   pixelDensity(1);
 
-  frameRate(30);
+    frameRate(30);
   //this loads the pixels into the pixels attribute
+  
   origImages[0].loadPixels();
 
   //create a new image for our processed media
@@ -41,7 +42,8 @@ function draw(){
   //and then process all of the pixels on the canvas
   image(procImage,0,0);
 
-  loadPixels();
+
+  /*loadPixels();
     for (var y = 0; y < height; y++) {
         for (var x = 0; x < width; x++) {
           var index = (x + y * width)*4;
@@ -58,7 +60,7 @@ function draw(){
           pixels[index+2] = luma;
     }
   }
-  updatePixels();
+  updatePixels();*/
 
   textSize(24);
   fill(255,0,0);
@@ -70,7 +72,7 @@ function keyPressed(){
   if(key=='b'){
       mBrightness(map(mouseY,0,height,1.0,0.0));
   } else if (key =='c'){
-      mCompressRange(50,150);
+      mCompressRange(120,150);
 
   }
 }

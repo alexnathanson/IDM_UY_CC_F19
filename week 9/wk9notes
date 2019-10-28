@@ -14,7 +14,8 @@ pixels
 * brightnesss
 - threshold...
 -images and pixels
-- color picker
+* color picker
+* keying
 - mouse vignette (brightness related to distance to mouse)
 
 pixel neighborhood

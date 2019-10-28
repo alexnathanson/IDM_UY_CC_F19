@@ -35,6 +35,8 @@ function draw(){
   
   background(200);
   image(origImages[1],230,230);
+  //image(origImages[1],0,0);
+
   image(procImage,0,0);
 
 }

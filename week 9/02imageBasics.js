@@ -21,11 +21,11 @@ function draw(){
   
   push();
   //when tint is in the draw loop it tints everything if you dont include the push & pop
-  tint(0, 153, 204); // Tint blue
+ // tint(0, 153, 204); // Tint blue
   image(img1, 0, 0, img1.width, img1.height);
   pop();
 
-  push();
+  /*push();
   //matrix transformations can be applied to images
   translate(img1.width/2,img1.height/2);
   //rotate(mouseX%TWO_PI);
@@ -34,8 +34,8 @@ function draw(){
   imageMode(CENTER);//sets the position mode
   image(img2,0,0,img2.width,img2.height);
   pop();
-
+*/
   //applies an image filter to the entire canvas
   //THRESHOLD, GRAY,OPAQUE,INVERT,BLUR,ERODE,DILATE
-  //filter(BLUR,map(mouseY,0,width,0,20));
+  filter(BLUR,map(mouseY,0,width,0,20));
 }

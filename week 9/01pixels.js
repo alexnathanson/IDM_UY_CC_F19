@@ -14,8 +14,8 @@ function setup(){
 	console.log((cX*cY) + ' * 4 = ' +(cX*cY*4));
 	console.log('Pixel length: ' + pixels.length);
 
-	//fill the canvas with random RGBA values
-	/*for(let index = 0;index<width*height*4;index++){
+	/*//fill the canvas with random RGBA values
+	for(let index = 0;index<width*height*4;index++){
 		pixels[index]=int(random(255));
 	}*/
 	
@@ -36,7 +36,7 @@ function setup(){
 			    pixels[index+2] = 0;
 			    pixels[index+3] = 255;
 			}
-	  }
+	  	}
 	}
 	
 	updatePixels();
