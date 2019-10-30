@@ -3,8 +3,6 @@ let   mediaDirectory = 'assets/';
 function preload(){
   img1 = loadImage(mediaDirectory + "1970-s-retro-television-set-1411612-1278x965.jpg");
   img2 = loadImage(mediaDirectory + "stranger-things-gang.jpg"); 
-
-  
 }
 
  function setup(){
