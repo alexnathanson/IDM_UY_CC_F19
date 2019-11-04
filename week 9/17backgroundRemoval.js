@@ -67,7 +67,6 @@ function subtract(){
 	  			foregroundImg.pixels[index+1]=g;
 	  			foregroundImg.pixels[index+2]=b;
 	  			foregroundImg.pixels[index+3]=255;
-
 	  		}
 	  	}
   	}

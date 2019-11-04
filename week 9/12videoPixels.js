@@ -23,10 +23,10 @@ function draw() {
   //this might produce a flicker on some browsers...
   //vidBrightness(.5);
 
-  //imageToDots();
-  image(vid,0,0);
+  imageToDots();
+  //image(vid,0,0);
 
-  canBrightness(.5);
+  //canBrightness(.1);
 }
 
 function vidLoad() {

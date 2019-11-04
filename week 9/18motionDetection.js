@@ -20,11 +20,11 @@ function draw() {
 
   	background(0);
   	
-  	image(capture,0,0);
+  	//image(capture,0,0);
 
 	detectMotion();
 
-	image(motion,320,0);
+	//image(motion,320,0);
 
 	copyFrame();
 }

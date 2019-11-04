@@ -59,6 +59,10 @@ function vidLoad() {
   			console.log('clicked!');
   		};
 
+  	vid.elt.onmouseenter = (event)=>{
+  		console.log("mouse entered! " + millis());
+  	}
+
   	//do something when the video stops playing (different from pause)
 	vid.elt.onended = (event) => {
 	  console.log('Video stopped either because 1) it was over, ' +
@@ -86,6 +90,6 @@ function keyPressed(){
 
 	} else if (key == 'j'){
 		//this will work even when paused
-		vid.elt.currentTime += 10;
+		vid.elt.currentTime += 2;
 	}
 }

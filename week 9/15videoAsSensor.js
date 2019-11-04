@@ -26,8 +26,8 @@ function draw() {
 	  image(capture,0,0);
 	  //avgBrightness();
 	  fill(255,0,0,100);
-	  //let thisLoc = brightestPixel();
-	  let thisLoc = colorTracker([255,255,0]);
+	  let thisLoc = brightestPixel();
+	  //let thisLoc = colorTracker([255,255,0]);
 	  ellipse(thisLoc[0],thisLoc[1],20,20);
   }
   
@@ -44,7 +44,7 @@ function avgBrightness(){
   	}
   }
   let avg = all/(capture.width*capture.height);
-  //console.log(avg);
+  console.log(avg);
 
 }
 

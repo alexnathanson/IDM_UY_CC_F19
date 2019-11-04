@@ -9,7 +9,7 @@ function setup() {
   capture = createCapture(VIDEO);
   capture.size(640,480);
   //capture.hide();
-	noiseScale = 0.005;
+	noiseScale = 0.05;
 
 	for(let t = 0; t<200;t++){
 		toff.push(random(1000));
