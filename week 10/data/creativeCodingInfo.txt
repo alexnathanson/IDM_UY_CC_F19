@@ -1,0 +1,3 @@
+class = creative coding
+teacher = Alex
+students = 17

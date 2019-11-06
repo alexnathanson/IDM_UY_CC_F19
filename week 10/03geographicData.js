@@ -3,6 +3,7 @@ let tableStats;
 let plotWidth;
 let plotX,plotY;
 
+let staticData;
 function preload(){
 
 /*load table is an asynchronous function that can
@@ -12,11 +13,15 @@ must explicitly indicate if a header is present*/
 
 //data source: https://data.cityofnewyork.us/City-Government/Borough-Boundaries-Water-Areas-Included-/tv64-9x69
  table = loadTable('data/nybb.csv', 'csv', 'header');
+ 
+
+ subwayEntrance = loadTable('data/DOITT_SUBWAY_ENTRANCE_01_13SEPT2010.csv', 'csv', 'header');
+
 }
 
 function setup(){
 	createCanvas(windowWidth,600);
-
+	//background(200);
 	//this will change depending on if header is specified
 	rowAmt = table.getRowCount();
 	console.log(rowAmt);
@@ -27,14 +32,32 @@ function setup(){
 
 	parseMultipolygon(table.getColumn(1)[0]);//1 without water, 2 with
 	
+	console.log(subwayEntrance);
 	//tableStats = dataInfo(table);
-	scale(2.5);
+	//scale(2.5);
+	parsePoint(subwayEntrance.getColumn(3)[0]);
+
+	push();
+	translate(250,500);
 	plot();
-	
+	plotSub();
+	pop();
+
+	staticData = createImage(width,height);
+	loadPixels();
+	staticData.loadPixels();
+	//copy over data
+	for (let i = 0; i < pixels.length; i++) {
+	    staticData.pixels[i] = pixels[i];
+	  }
+	staticData.updatePixels();
+
 }
 
 function draw(){
-	
+	background(abs(sin(millis()/1000))*255,255-(abs(sin(millis()/1000))*255),abs(cos(millis()/1000))*255);
+	translate(mouseX-250,mouseY-250);
+	image(staticData,0,0);
 }
 
 //arg either 'head' or 'tail'
@@ -69,7 +92,6 @@ function plot(){
 			}
 			endShape(CLOSE);//close?
 		}
-		
 	}
 }
 
@@ -98,8 +120,7 @@ function parseMultipolygon(aMP){
 		for(let p = 0;p<islands.length;p++){
 			//split, convert to floats, and remap
 			let coordPairs = islands[p].split(' ');
-			coordPairs[0] = map(parseFloat(coordPairs[0]),-75,-73,0,900);
-			coordPairs[1] = map(parseFloat(coordPairs[1]),39,41,900,0);
+			coordPairs = latLongScale(coordPairs);
 			parsedIs.push(coordPairs);
 		}
 		parsedIt.push(parsedIs);
@@ -107,4 +128,33 @@ function parseMultipolygon(aMP){
 
 	//console.log(parsedIt);
 	return parsedIt;
+}
+
+function latLongScale(aPoint){
+
+	aPoint[0] =  map(parseFloat(aPoint[0]),-74.5,-74,-250,250);
+	aPoint[1] = map(parseFloat(aPoint[1]),40,41,500,-500);
+
+	return aPoint;
+}
+
+function parsePoint(aP){
+	aP=aP.slice(7,aP.length-1);
+
+	aPP = aP.split(' ');
+
+	aPP = latLongScale(aPP);
+
+	return aPP;
+}	
+
+function plotSub(){
+	let entrances = subwayEntrance.getColumn(3);
+	for(let e=0;e<entrances.length;e++){
+		let entrance = parsePoint(entrances[e]);
+		fill(255);
+		noStroke();
+		ellipse(entrance[0],entrance[1],2,2);
+	}
+	
 }
