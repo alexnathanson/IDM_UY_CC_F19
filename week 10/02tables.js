@@ -19,11 +19,13 @@ function setup(){
 
 	//this will change depending on if header is specified
 	rowAmt = table.getRowCount();
-	console.log(rowAmt);
+	//console.log(rowAmt);
 	//if header is specified this will return the column names
-	console.log(table.columns);
+	//console.log(table.columns);
 
-	console.log(table.get(0,0));
+	//console.log(table.get(0,0));
+	//console.log(table.columns[1]);
+	console.log(table.getRow(0).obj['New York City Population']);
 
 	dataView('head');
 
@@ -34,8 +36,8 @@ function setup(){
 	plotX = 0;
 	plotY = 3;
 	//there are multiple ways to write code that retrieves the same thing when dealing with data
-	console.log(table.getRow(9)['arr'][3]);
-	console.log(table.getRow(9).arr[3]);
+	/*console.log(table.getRow(9)['arr'][3]);
+	console.log(table.getRow(9).arr[3]);*/
 
 	
 }
@@ -55,7 +57,7 @@ function dataView(range){
 		} else if(range == 'tail'){
 			rIndex = table.getRowCount()-(5-index);
 		}
-		console.log(table.getRow(rIndex).arr);
+		//console.log(table.getRow(rIndex).arr);
 		index++;
 	}
 }

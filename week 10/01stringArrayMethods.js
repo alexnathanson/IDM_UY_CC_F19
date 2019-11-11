@@ -24,4 +24,13 @@ function setup(){
 	console.log(typeof keyValuePairs);
 	console.log(keyValuePairs);
 
+	console.log(keyValuePairs.split('\n'));
+
+	for(let i = 0;i<txtFile.length;i++){
+		console.log(txtFile[i].split(' = '));
+		let equ = txtFile[i].indexOf(' = ');
+		console.log(equ);
+		console.log(txtFile[i].slice(equ+3,txtFile[i].length));
+	}
+
 }

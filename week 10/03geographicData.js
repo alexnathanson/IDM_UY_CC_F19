@@ -27,7 +27,7 @@ function setup(){
 	console.log(rowAmt);
 	//if header is specified this will return the column names
 	//console.log(typeof table.getColumn(2)[0]);
-	//console.log(table.getColumn(2)[0]);
+	console.log(table);
 	//console.log(table);
 
 	parseMultipolygon(table.getColumn(1)[0]);//1 without water, 2 with
@@ -58,6 +58,9 @@ function draw(){
 	background(abs(sin(millis()/1000))*255,255-(abs(sin(millis()/1000))*255),abs(cos(millis()/1000))*255);
 	translate(mouseX-250,mouseY-250);
 	image(staticData,0,0);
+/*
+	plot();
+	plotSub();*/
 }
 
 //arg either 'head' or 'tail'
