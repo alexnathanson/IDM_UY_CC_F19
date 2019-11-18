@@ -4,6 +4,8 @@ let getThis;
 
 //the URI can be either local or remote, as long as the server is configured to accept cross-origin requests
 getThis = 'http://api.openweathermap.org/data/2.5/weather?q=Brooklyn&units=imperial&APPID=b0ca160d26b68a5f4da977ab337b8287';
+//getThis =  'http://api.openweathermap.org/data/2.5/forecast/hourly?q=London,us&mode=xml&APPID=b0ca160d26b68a5f4da977ab337b8287';
+
 //you could also try to get a local resource 
 //getThis = 'http://localhost:8000/week%2010/index.html';
 
@@ -18,13 +20,14 @@ function setup(){
  }
 
 function draw(){
-  background(0,255,0);
+  //background(0,255,0);
 }
 
 function getRequest(adr,callback){
 
 
   let client = new XMLHttpRequest();
+  console.log(client);
   //open initiates a request method
   //the default is asynchronous, but can be done synchronously
   client.open("GET", adr);
@@ -51,7 +54,7 @@ function myCallback(response){
   console.log(typeof response);
   console.log(response);
 
- /* getResponse = JSON.parse(response);
+  getResponse = JSON.parse(response);
   console.log(typeof getResponse);
-  console.log(getResponse);*/
+  console.log(getResponse);
 }

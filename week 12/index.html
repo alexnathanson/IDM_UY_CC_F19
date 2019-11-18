@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js example</title>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="02domEvents.js"></script>
+
+    <style>
+      body {padding: 0; 
+            margin: 0;
+            background-color: powderblue;
+            text-align: center;
+            margin:auto;}
+      h3   {color: blue;}
+      p    {color: red;}
+      /* # is used for id and . is used for classes*/
+      .myClass {background-color: green;}
+      #header {width: 800px;
+              margin-left: auto;
+              margin-right: auto;
+              border: 3px solid #73AD21;}
+    </style>
+  </head>
+  <body>
+    <h3 id="header">DOM Stuff!</h3>
+    <p class="myClass">some text!</p>
+    <p id= "pId">some text!</p>
+    <p class="myClass">some more text!</p>
+
+    <ol id="myList"></ol>
+
+  </body>
+</html>
