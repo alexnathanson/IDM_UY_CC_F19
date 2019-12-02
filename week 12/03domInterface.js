@@ -31,6 +31,9 @@ function setup(){
 	radio.option('red');
 	radio.option('green');
 	radio.option('blue');
+	radio.option('red');
+	radio.option('green');
+	radio.option('blue');
 	//radio.style('width', '60px');
 }
 

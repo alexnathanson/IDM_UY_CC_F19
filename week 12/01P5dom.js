@@ -3,9 +3,10 @@
 let pX,pY;
 let from,to;
 let p = [];
+let canvas;
 
 function setup(){
-	createCanvas(windowWidth/2,600);
+	canvas = createCanvas(windowWidth/2,600);
 
 	pX = random(width);
 	pY = random(height);
@@ -15,6 +16,8 @@ function setup(){
 }
 
 function draw(){
+	canvas.position(400, 300);
+
 	let i = map(sin(frameCount * 0.01),-1.0,1.0,0.0,1.0);
 	let bkgrnd = lerpColor(from, to, i);
 	background(bkgrnd);
@@ -33,11 +36,12 @@ function draw(){
 function keyPressed(){
 	switch (key){
 		case "c":
-			console.log(p);
+			console.log(document);
 			break;
 		case "p":
 			p.push(createP("a new paragraph!"));
 			//p[p.length-1].class('myClass');
+			p[p.length-1].style('font-size', '32px');
 			break;
 		case "a":
 			break;

@@ -1,12 +1,16 @@
-let button, p;
+let button;
+let p = [];
 
 function setup(){
 	button = createButton("click me!");
 	button.mousePressed(myCallback);
 
-	p = createP("my great paragraph");
-	p.mouseOver(thisCallback);
-	p.mouseOut(thisCallbackOut);
+	for(let l =0; l<5;l++){
+		p.push(createP("my great paragraph"));
+		p[l].mouseOver(thisCallback);
+		p[l].mouseOut(thisCallbackOut);
+	}
+	
 }
 
 function draw(){
