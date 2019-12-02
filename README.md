@@ -30,3 +30,6 @@ APIs
 ## WK 12
 DOM
 ## WK 13
+In-progress presentations, no lesson
+## WK 14
+Arduion + Serial + Node JS
