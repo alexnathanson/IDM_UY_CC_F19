@@ -1,8 +1,3 @@
-/*let name = process.argv[2];
-
-console.log("Hello, and welcome to node, " + name);
-*/
-
 //based off of https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-communication-with-node-js/
 
 //require tells node which modules to include
@@ -13,6 +8,10 @@ let SERVER_PORT = 8081;               // port number for the webSocket server
 let wss = new WebSocketServer({port: SERVER_PORT}); // the webSocket server
 let connections = new Array;          // list of connections to the server
 
+//Here are the webSocket event listeners:
+wss.on('connection', handleConnection);
+ 
+let myPort;
 let portName;
 let oldData = "";
 // list serial ports:
@@ -23,8 +22,6 @@ SerialPort.list().then(
   	newPort()},
   err => console.error(err)
 )
-
-let myPort;
 
 function newPort(){
 	//open a new port
@@ -39,9 +36,7 @@ function newPort(){
 	//myPort.on('data',readSerialData);
 	myPort.on('close', showPortClose);
 	myPort.on('error', showError);
-
 }
-
 
 function showPortOpen() {
    console.log('port open. ' + portName + ' Data rate: ' + myPort.baudRate);
@@ -51,8 +46,6 @@ function readSerialData(data) {
 	if(data != oldData){
 		console.log(data);
 		oldData = data;
-
-		//writeSerial('l');
 	}
 
 	 if (connections.length > 0) {
@@ -75,10 +68,6 @@ function writeSerial(myChar){
 	//myPort.write(Buffer.from(charCode))
 }
 
-
-//Here are the webSocket event listeners:
-wss.on('connection', handleConnection);
- 
 function handleConnection(client) {
  console.log("New Connection"); // you have a new client
  connections.push(client); // add this client to the connections array
@@ -106,5 +95,4 @@ function sendToSerial(data) {
 		console.log("sending to serial: " + data);
  		writeSerial(data);
 	}
-
 }
