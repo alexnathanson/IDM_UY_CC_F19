@@ -1,5 +1,6 @@
 //let text;     // variable for the text div you'll create
-let socket = new WebSocket("ws://localhost:8081");
+//let socket = new WebSocket("ws://localhost:8081");
+let socket = new WebSocket("ws://10.18.65.16:8081");
 let xPos=0;
 let button;
 let buttonBool = false;

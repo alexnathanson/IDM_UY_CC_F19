@@ -2,13 +2,14 @@ let name = process.argv[2];
 
 console.log("Hello, and welcome to node, " + name);
 
-
 /*
 //require tells node which modules to include
 let SerialPort = require('serialport');
 
+//console.log(SerialPort);
+
 let portName;
-let oldData = "";
+
 // list serial ports:
 SerialPort.list().then(
   ports => {

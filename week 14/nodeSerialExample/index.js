@@ -93,6 +93,6 @@ function sendToSerial(data) {
 		console.log(data);
 	} else {
 		console.log("sending to serial: " + data);
- 		writeSerial(data);
+ 		//writeSerial(data);
 	}
 }
